@@ -1,0 +1,7 @@
+pb_data
+pb_migrations
+LICENSE.md
+CHANGELOG.md
+pocketbase
+.git
+.gitignore
