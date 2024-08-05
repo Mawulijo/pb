@@ -11,11 +11,11 @@ RUN wget https://github.com/pocketbase/pocketbase/releases/download/v$(cat tag.t
 FROM alpine:latest
 
 RUN apk update && apk add --update git build-base ca-certificates && rm -rf /var/cache/apk/*
-RUN mkdir -p /usr/local/bin/pocketbase/pb_hooks
+RUN mkdir -p /usr/local/bin/pb_hooks
 COPY --from=download /pocketbase /usr/local/bin/pocketbase
-COPY pb_hooks /usr/local/bin/pocketbase/
-RUN chmod +x /usr/local/bin/pocketbase/
-RUN ls /usr/local/bin/pocketbase/pb_hooks
+COPY pb_hooks/* /usr/local/bin/pb_hooks/
+RUN chmod +x /usr/local/bin/pocketbase
+RUN ls /usr/local/bin/pb_hooks
 
 EXPOSE 8090
 
