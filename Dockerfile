@@ -15,7 +15,7 @@ RUN mkdir -p /usr/local/bin/pocketbase/pb_hooks
 COPY --from=download /pocketbase /usr/local/bin/pocketbase
 COPY pb_hooks /usr/local/bin/pocketbase/
 RUN chmod +x /usr/local/bin/pocketbase/
-RUN ls /usr/local/bin/pocketbase/
+RUN ls /usr/local/bin/pocketbase/pb_hooks
 
 EXPOSE 8090
 
